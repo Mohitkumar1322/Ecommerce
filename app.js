@@ -13,7 +13,7 @@ const usersRouter = require("./routes/usersRouter");
 const indexRouter = require("./routes/index");
 
 const db = require("./config/mongoose-connection");
-
+const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -33,4 +33,4 @@ app.use("/owners", ownersRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 
-app.listen(3000);
+app.listen(port);
